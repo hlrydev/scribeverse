@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lexend, Major_Mono_Display, Rock_Salt } from "next/font/google";
 import "./globals.css";
 import Footer from "@components/footer";
+import { toast, Toaster } from "sonner";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -39,6 +40,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <Toaster position="top-right" />
       </body>
     </html>
   );

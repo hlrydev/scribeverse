@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -141,7 +141,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <Toaster position="top-right" />
     </>
   );
 }

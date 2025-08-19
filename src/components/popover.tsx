@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast, Toaster } from "sonner";
 import {
   Popover,
   PopoverContent,
@@ -28,7 +29,7 @@ export default function BetaSignupPopover({
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/beta_signup", {
+      const response = await fetch("/api/beta-signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,11 +43,13 @@ export default function BetaSignupPopover({
 
       if (response.ok) {
         if (data.message.includes("already registered")) {
-          alert(
+          toast.info(
             "✉️ You're already on our beta waitlist! We'll be in touch soon."
           );
         } else {
-          alert("🎉 You're on the beta waitlist! We'll be in touch soon.");
+          toast.success(
+            "🎉 You're on the beta waitlist! We'll be in touch soon."
+          );
         }
         setFormData({ email: "" });
         setIsOpen(false);
@@ -55,7 +58,7 @@ export default function BetaSignupPopover({
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Oops! Something went wrong. Please try again.");
+      toast.error("Oops! Something went wrong. Please try again.");
     }
 
     setIsSubmitting(false);
@@ -69,49 +72,52 @@ export default function BetaSignupPopover({
   };
 
   return (
-    <Popover open={isOpen} onOpenChange={setIsOpen}>
-      <PopoverTrigger asChild>{children}</PopoverTrigger>
-      <PopoverContent className="w-80 p-4" align="center">
-        <div className="space-y-4">
-          <div className="text-center">
-            <h3
-              className="text-lg font-bold text-primary mb-1"
-              style={{ fontFamily: "var(--font-lexend)" }}
-            >
-              Join the Beta Waitlist! 🚀
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Be first to try Scribeverse
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm">
-                Email
-              </Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="your.email@example.com"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="h-9"
-              />
+    <>
+      <Popover open={isOpen} onOpenChange={setIsOpen}>
+        <PopoverTrigger asChild>{children}</PopoverTrigger>
+        <PopoverContent className="w-80 p-4" align="center">
+          <div className="space-y-4">
+            <div className="text-center">
+              <h3
+                className="text-lg font-bold text-primary mb-1"
+                style={{ fontFamily: "var(--font-lexend)" }}
+              >
+                Join the Beta Waitlist! 🚀
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Be first to try Scribeverse
+              </p>
             </div>
 
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary/90 text-white h-9"
-            >
-              {isSubmitting ? "Joining..." : "Join Beta Waitlist"}
-            </Button>
-          </form>
-        </div>
-      </PopoverContent>
-    </Popover>
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-sm">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="h-9"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary/90 text-white h-9"
+              >
+                {isSubmitting ? "Joining..." : "Join Beta Waitlist"}
+              </Button>
+            </form>
+          </div>
+        </PopoverContent>
+      </Popover>
+      <Toaster position="top-right" />
+    </>
   );
 }
