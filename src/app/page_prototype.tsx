@@ -1,22 +1,8 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import FAQSection from "@/components/faq_section";
-import Header from "@components/header_signup_beta";
-import BetaSignupPopover from "@/components/popover";
+import Header from "@components/header";
 
 export default function Home() {
-  // Function to scroll to the "WE GET IT" section
-  const scrollToFeatures = () => {
-    const featuresSection = document.getElementById("features-section");
-    if (featuresSection) {
-      featuresSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
   return (
     <>
       <Header />
@@ -42,19 +28,16 @@ export default function Home() {
 
           {/* Buttons Container */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <BetaSignupPopover>
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg"
-              >
-                join beta waitlist
-              </Button>
-            </BetaSignupPopover>
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg"
+            >
+              get started
+            </Button>
 
             <Button
               size="lg"
-              onClick={scrollToFeatures}
-              className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg cursor-pointer"
+              className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg"
             >
               take a look
             </Button>
@@ -104,7 +87,7 @@ export default function Home() {
       </div>
 
       {/* WE GET IT*/}
-      <section id="features-section" className="w-full mb-0 px-8">
+      <section className="w-full mb-0 px-8">
         <div className="max-w-7xl mx-auto">
           {/* Main heading with underline*/}
           <div className="relative mb-8">
@@ -360,7 +343,7 @@ export default function Home() {
       </div>
 
       {/* Challenges feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-50 -mb-25">
+      <div className="w-full h-screen flex items-center justify-center -mt-50">
         <img
           src="/img/features/export_button.png"
           alt="Export Options"
@@ -411,10 +394,7 @@ export default function Home() {
               className="text-lg text-accent font-light ml-6"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              Let the world stalk your WIPs and stats. You don't have to use
-              this function if you'd like to keep your work private, this is
-              absolutely optional! Scribeverse's main focus is not a social
-              media, but an all-in-one tool to support writers.
+              Let the world stalk your WIPs and stats.
             </p>
           </div>
 
@@ -447,25 +427,8 @@ export default function Home() {
               className="text-lg text-accent font-light ml-6"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              Listen to your chapter/book/project playlists and look at your
-              moodboard for inspiration while writing.
-            </p>
-          </div>
-
-          {/* Beta Reader */}
-          <div>
-            <h3
-              className="text-xl md:text-2xl font-bold text-foreground mb-2"
-              style={{ fontFamily: "var(--font-lexend)" }}
-            >
-              • BETA READERS
-            </h3>
-            <p
-              className="text-lg text-accent font-light ml-6"
-              style={{ fontFamily: "var(--font-lexend)" }}
-            >
-              Connect with beta readers for feedback and support during your
-              writing process.
+              Listen to your playlists and look at your moodboard for
+              inspiration while writing.
             </p>
           </div>
         </div>
