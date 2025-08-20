@@ -40,12 +40,12 @@ export default function Home() {
             your stories deserve a Universe
           </h2>
 
-          {/* Buttons Container */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+          {/* Buttons Container - Made Responsive */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
             <BetaSignupPopover>
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/10 text-accent font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg"
               >
                 join beta waitlist
               </Button>
@@ -54,14 +54,14 @@ export default function Home() {
             <Button
               size="lg"
               onClick={scrollToFeatures}
-              className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg cursor-pointer"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/10 text-accent font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg cursor-pointer"
             >
               take a look
             </Button>
           </div>
 
           {/* Handwritten Note with Arrow */}
-          <div className="relative inline-block mt-8">
+          <div className="hide-on-mobile relative inline-block mt-8">
             {/* Arrow pointing to first button */}
             <div className="absolute -top-22 -left-48 transform rotate-310">
               <svg
@@ -201,8 +201,9 @@ export default function Home() {
             project or book dashboard.
           </p>
         </div>
-        {/* Handwritten Note with Arrow */}
-        <div className="relative inline-block mt-8">
+
+        {/* Handwritten Note with Arrow*/}
+        <div className="hide-on-mobile relative inline-block mt-8">
           {/* Arrow pointing to first button */}
           <div className="absolute top-13 -left-48 transform rotate-290">
             <svg
@@ -229,9 +230,9 @@ export default function Home() {
             </svg>
           </div>
 
-          {/* Handwritten text */}
+          {/* Handwritten text*/}
           <p
-            className="text-sm font-handwritten text-secondary relative top-25 -left-55 transform font-serif italic"
+            className="text-sm font-handwritten text-secondary absolute top-25 -left-55 transform font-serif italic"
             style={{ fontFamily: "var(--font-rock-salt)" }}
           >
             yes, with
@@ -320,7 +321,7 @@ export default function Home() {
         </div>
 
         {/* Handwritten Note with Arrow */}
-        <div className="relative inline-block mt-8">
+        <div className="hide-on-mobile relative inline-block mt-8">
           {/* Arrow pointing to first button */}
           <div className="absolute -top-10 left-148 transform rotate-270">
             <svg
