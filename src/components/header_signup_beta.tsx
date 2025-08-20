@@ -4,7 +4,7 @@ import BetaSignupPopover from "@/components/popover";
 
 export default function Header() {
   return (
-    <header className="w-full bg-[#1a1a1a] text-white px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+    <header className="w-full bg-[#1a1a1a] text-white px-4 sm:px-6 py-2 sm:py-4 flex items-center justify-between">
       <div className="flex items-center gap-2">
         <Link
           href="/"

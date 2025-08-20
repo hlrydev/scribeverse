@@ -20,12 +20,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* Hero Section */}
+      {/* Hero Section*/}
+
       <div className="min-h-screen flex items-center justify-center px-4 overflow-x-hidden">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Main Heading */}
+          {/* Main Heading: FIX DISPLAY FOR MOBILE FOR TEXT TO APPEAR SMALLER */}
           <h1
-            className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 leading-tight"
             style={{ fontFamily: "var(--font-major-mono-display)" }}
           >
             <span className="text-secondary">WRite. obsess. </span>
@@ -34,7 +35,7 @@ export default function Home() {
 
           {/* Subheading */}
           <h2
-            className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground mb-12"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-foreground mb-8 sm:mb-12"
             style={{ fontFamily: "var(--font-major-mono-display)" }}
           >
             your stories deserve a Universe
@@ -103,19 +104,19 @@ export default function Home() {
         </div>
       </div>
 
-      {/* WE GET IT*/}
-      <section id="features-section" className="w-full mb-0 px-8">
+      {/* WE GET IT - Mobile Responsive Version */}
+      <section id="features-section" className="w-full mb-0 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Main heading with underline*/}
-          <div className="relative mb-8">
+          <div className="relative mb-6 md:mb-8">
             <h1
-              className="text-5xl md:text-5xl font-bold text-primary mb-2"
+              className="text-3xl md:text-5xl font-bold text-primary mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
               WE GET IT.
             </h1>
             {/* Decorative underline */}
-            <div className="absolute -bottom-2 left-20 w-80">
+            <div className="hide-on-mobile absolute -bottom-2 left-20 w-80">
               <svg
                 viewBox="0 0 300 20"
                 className="w-full h-4 text-secondary"
@@ -141,7 +142,7 @@ export default function Home() {
 
           {/* Description text*/}
           <p
-            className="text-lg md:text-xl lg:text-2xl text-accent font-light leading-relaxed mb-8"
+            className="text-base md:text-lg lg:text-2xl text-accent font-light leading-relaxed mb-6 md:mb-8"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -161,9 +162,9 @@ export default function Home() {
 
       {/* Black banner coming from the left */}
       <div className="w-full mb-0">
-        <div className="bg-foreground text-white pl-30 pr-6 py-4 rounded-r-full max-w-7xl">
+        <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-7xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -177,7 +178,7 @@ export default function Home() {
       </div>
 
       {/* Dashboard feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-13">
+      <div className="w-full h-screen flex items-center justify-center -mt-4 md:-mt-13">
         <img
           src="/img/features/dashboard_feature_img.png"
           alt="Main Dashboard view"
@@ -186,10 +187,10 @@ export default function Home() {
       </div>
 
       {/* Black banner coming from the right */}
-      <div className="w-full mb-0 flex justify-end">
-        <div className="bg-foreground text-white pl-15 pr-20 py-4 rounded-l-full max-w-7xl">
+      <div className="w-full mb-0 md:flex md:justify-end">
+        <div className="bg-foreground text-white px-4 md:pl-15 md:pr-20 py-4 md:rounded-l-full max-w-full md:max-w-7xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -243,7 +244,7 @@ export default function Home() {
       </div>
 
       {/* Projects & Books feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-13">
+      <div className="w-full h-screen flex items-center justify-center -mt-4 md:-mt-13">
         <img
           src="/img/features/projects_books_dashboard_feature_img.png"
           alt="Books and projects dashboards"
@@ -253,22 +254,23 @@ export default function Home() {
 
       {/* Black banner coming from the left 2*/}
       <div className="w-full mb-0">
-        <div className="bg-foreground text-white pl-30 pr-6 py-4 rounded-r-full max-w-4xl">
+        <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-4xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
           >
             <span className="font-bold">🏆 NaNoWriMo-Style Challenges</span>
             <br />
-            Missing NaNoWriMo? Me too. Dive into community writing challenges.
+            Missing NaNoWriMo? Me too. Dive into community writing challenges
+            and Daily/Weekly Prompts.
           </p>
         </div>
       </div>
 
       {/* Challenges feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-30">
+      <div className="w-full h-screen flex items-center justify-center -mt-10 md:-mt-30">
         <img
           src="/img/features/challenges_features.png"
           alt="Challenges"
@@ -277,10 +279,10 @@ export default function Home() {
       </div>
 
       {/* Black banner coming from the right 2*/}
-      <div className="w-full mb-0 flex justify-end">
-        <div className="bg-foreground text-white pl-15 pr-20 py-4 rounded-l-full max-w-7xl">
+      <div className="w-full mb-0 md:flex md:justify-end">
+        <div className="bg-foreground text-white px-4 md:pl-15 md:pr-20 py-4 md:rounded-l-full max-w-full md:max-w-7xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -295,7 +297,7 @@ export default function Home() {
       </div>
 
       {/* RTF feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-23 -mb-20">
+      <div className="w-full h-screen flex items-center justify-center -mt-8 md:-mt-23 -mb-8 md:-mb-20">
         <img
           src="/img/features/text_editor_feature.png"
           alt="Text Editor"
@@ -305,9 +307,9 @@ export default function Home() {
 
       {/* Black banner coming from the left 3*/}
       <div className="w-full mb-0">
-        <div className="bg-foreground text-white pl-30 pr-6 py-4 rounded-r-full max-w-4xl">
+        <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-4xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -360,8 +362,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Challenges feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-50 -mb-25">
+      {/* Export feature image */}
+      <div className="w-full h-screen flex items-center justify-center -mt-20 md:-mt-50 -mb-10 md:-mb-25">
         <img
           src="/img/features/export_button.png"
           alt="Export Options"
@@ -370,9 +372,9 @@ export default function Home() {
       </div>
 
       {/* Full width banner across the stage */}
-      <section className="w-full bg-foreground text-white py-10 px-8">
+      <section className="w-full bg-foreground text-white py-6 md:py-10 px-4 md:px-8">
         <p
-          className="text-lg md:text-3xl font-medium text-center w-full"
+          className="text-base md:text-lg lg:text-3xl font-medium text-center w-full"
           style={{ fontFamily: "var(--font-lexend)" }}
         >
           <span className="text-primary font-bold">SCRIBEVERSE</span> IS
@@ -389,7 +391,7 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • FANDOM TAGGING + PROMPT REQUESTS
+              • 🏷️ FANDOM TAGGING + PROMPT REQUESTS
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
@@ -406,7 +408,7 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • AUTHOR SOCIAL PROFILES
+              • 🌐 AUTHOR SOCIAL PROFILES
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
@@ -425,7 +427,7 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • EARLY ACCESS + SUBSCRIPTIONS
+              • 📸 EARLY ACCESS + SUBSCRIPTIONS
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
@@ -442,7 +444,7 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • PINTEREST + SPOTIFY INTEGRATION
+              • 🎧 PINTEREST + SPOTIFY INTEGRATION
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
@@ -459,14 +461,15 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • BETA READERS
+              • 🫂 BETA READERS + WRITER GROUPS
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
               Connect with beta readers for feedback and support during your
-              writing process.
+              writing process. Join or create writer groups for collaboration
+              and motivation.
             </p>
           </div>
         </div>
