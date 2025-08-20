@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
+import BetaSignupPopover from "@/components/popover";
 
 export default function FAQSection() {
   return (
@@ -53,8 +54,17 @@ export default function FAQSection() {
             </AccordionTrigger>
             <AccordionContent className="bg-accent text-white px-6 py-6 rounded-b-lg">
               <p style={{ fontFamily: "var(--font-lexend)" }}>
-                To join the beta list, simply sign up here. There are limited
-                spots available, so be sure to secure your place!
+                To join the beta list, simply sign up{" "}
+                <BetaSignupPopover>
+                  <span
+                    style={{ color: "inherit", textDecoration: "underline" }}
+                  >
+                    here.
+                  </span>
+                </BetaSignupPopover>
+                <br />
+                There are limited spots available, so be sure to secure your
+                place!
               </p>
             </AccordionContent>
           </AccordionItem>
