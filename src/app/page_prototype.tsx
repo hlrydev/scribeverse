@@ -1,17 +1,32 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import FAQSection from "@/components/faq_section";
-import Header from "@components/header";
+import Header from "@components/header_signup_beta";
+import BetaSignupPopover from "@/components/popover";
 
 export default function Home() {
+  // Function to scroll to the "WE GET IT" section
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById("features-section");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <Header />
-      {/* Hero Section */}
-      <div className="min-h-screen flex items-center justify-center px-4 overflow-x-hidden">
+      {/* Hero Section*/}
+
+      <div className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center px-4 overflow-x-hidden">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Main Heading */}
+          {/* Main Heading: FIX DISPLAY FOR MOBILE FOR TEXT TO APPEAR SMALLER */}
           <h1
-            className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 leading-tight"
             style={{ fontFamily: "var(--font-major-mono-display)" }}
           >
             <span className="text-secondary">WRite. obsess. </span>
@@ -20,31 +35,34 @@ export default function Home() {
 
           {/* Subheading */}
           <h2
-            className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground mb-12"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-foreground mb-8 sm:mb-12"
             style={{ fontFamily: "var(--font-major-mono-display)" }}
           >
             your stories deserve a Universe
           </h2>
 
-          {/* Buttons Container */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg"
-            >
-              get started
-            </Button>
+          {/* Buttons Container - Made Responsive */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
+            <BetaSignupPopover>
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/10 text-accent font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg"
+              >
+                get started
+              </Button>
+            </BetaSignupPopover>
 
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/10 text-accent font-semibold text-lg px-8 py-4 rounded-lg"
+              onClick={scrollToFeatures}
+              className="w-full sm:w-auto bg-primary hover:bg-primary/10 text-accent font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg cursor-pointer"
             >
               take a look
             </Button>
           </div>
 
           {/* Handwritten Note with Arrow */}
-          <div className="relative inline-block mt-8">
+          <div className="hide-on-mobile relative inline-block mt-8">
             {/* Arrow pointing to first button */}
             <div className="absolute -top-22 -left-48 transform rotate-310">
               <svg
@@ -86,19 +104,19 @@ export default function Home() {
         </div>
       </div>
 
-      {/* WE GET IT*/}
-      <section className="w-full mb-0 px-8">
+      {/* WE GET IT - Mobile Responsive Version */}
+      <section id="features-section" className="w-full mb-4 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Main heading with underline*/}
-          <div className="relative mb-8">
+          <div className="relative mb-6 md:mb-8">
             <h1
-              className="text-5xl md:text-5xl font-bold text-primary mb-2"
+              className="text-3xl md:text-5xl font-bold text-primary mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
               WE GET IT.
             </h1>
             {/* Decorative underline */}
-            <div className="absolute -bottom-2 left-20 w-80">
+            <div className="hide-on-mobile absolute -bottom-2 left-20 w-80">
               <svg
                 viewBox="0 0 300 20"
                 className="w-full h-4 text-secondary"
@@ -124,7 +142,7 @@ export default function Home() {
 
           {/* Description text*/}
           <p
-            className="text-lg md:text-xl lg:text-2xl text-accent font-light leading-relaxed mb-8"
+            className="text-base md:text-lg lg:text-2xl text-accent font-light leading-relaxed mb-6 md:mb-8"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -143,10 +161,10 @@ export default function Home() {
       </section>
 
       {/* Black banner coming from the left */}
-      <div className="w-full mb-0">
-        <div className="bg-foreground text-white pl-30 pr-6 py-4 rounded-r-full max-w-7xl">
+      <div className="w-full mb-4">
+        <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-7xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -160,19 +178,19 @@ export default function Home() {
       </div>
 
       {/* Dashboard feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-13">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-13">
         <img
           src="/img/features/dashboard_feature_img.png"
           alt="Main Dashboard view"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the right */}
-      <div className="w-full mb-0 flex justify-end">
-        <div className="bg-foreground text-white pl-15 pr-20 py-4 rounded-l-full max-w-7xl">
+      <div className="w-full mb-4 md:flex md:justify-end">
+        <div className="bg-foreground text-white px-4 md:pl-15 md:pr-20 py-4 md:rounded-l-full max-w-full md:max-w-7xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -184,8 +202,9 @@ export default function Home() {
             project or book dashboard.
           </p>
         </div>
-        {/* Handwritten Note with Arrow */}
-        <div className="relative inline-block mt-8">
+
+        {/* Handwritten Note with Arrow*/}
+        <div className="hide-on-mobile relative inline-block mt-8">
           {/* Arrow pointing to first button */}
           <div className="absolute top-13 -left-48 transform rotate-290">
             <svg
@@ -212,9 +231,9 @@ export default function Home() {
             </svg>
           </div>
 
-          {/* Handwritten text */}
+          {/* Handwritten text*/}
           <p
-            className="text-sm font-handwritten text-secondary relative top-25 -left-55 transform font-serif italic"
+            className="text-sm font-handwritten text-secondary absolute top-25 -left-55 transform font-serif italic"
             style={{ fontFamily: "var(--font-rock-salt)" }}
           >
             yes, with
@@ -225,44 +244,45 @@ export default function Home() {
       </div>
 
       {/* Projects & Books feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-13">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-13">
         <img
           src="/img/features/projects_books_dashboard_feature_img.png"
           alt="Books and projects dashboards"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the left 2*/}
-      <div className="w-full mb-0">
-        <div className="bg-foreground text-white pl-30 pr-6 py-4 rounded-r-full max-w-4xl">
+      <div className="w-full mb-4">
+        <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-4xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
           >
             <span className="font-bold">🏆 NaNoWriMo-Style Challenges</span>
             <br />
-            Missing NaNoWriMo? Me too. Dive into community writing challenges.
+            Missing NaNoWriMo? Me too. Dive into community writing challenges
+            and Daily/Weekly Prompts.
           </p>
         </div>
       </div>
 
       {/* Challenges feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-30">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-30">
         <img
           src="/img/features/challenges_features.png"
           alt="Challenges"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the right 2*/}
-      <div className="w-full mb-0 flex justify-end">
-        <div className="bg-foreground text-white pl-15 pr-20 py-4 rounded-l-full max-w-7xl">
+      <div className="w-full mb-4 md:flex md:justify-end">
+        <div className="bg-foreground text-white px-4 md:pl-15 md:pr-20 py-4 md:rounded-l-full max-w-full md:max-w-7xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -277,19 +297,19 @@ export default function Home() {
       </div>
 
       {/* RTF feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-23 -mb-20">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-23 md:-mb-20">
         <img
           src="/img/features/text_editor_feature.png"
           alt="Text Editor"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the left 3*/}
-      <div className="w-full mb-0">
-        <div className="bg-foreground text-white pl-30 pr-6 py-4 rounded-r-full max-w-4xl">
+      <div className="w-full mb-4">
+        <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-4xl">
           <p
-            className="text-lg md:text-xl font-light"
+            className="text-base md:text-lg lg:text-xl font-light"
             style={{
               fontFamily: "var(--font-lexend)",
             }}
@@ -303,7 +323,7 @@ export default function Home() {
         </div>
 
         {/* Handwritten Note with Arrow */}
-        <div className="relative inline-block mt-8">
+        <div className="hide-on-mobile relative inline-block mt-8">
           {/* Arrow pointing to first button */}
           <div className="absolute -top-10 left-148 transform rotate-270">
             <svg
@@ -342,19 +362,19 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Challenges feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-50">
+      {/* Export feature image */}
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-50 md:-mb-25">
         <img
           src="/img/features/export_button.png"
           alt="Export Options"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Full width banner across the stage */}
-      <section className="w-full bg-foreground text-white py-10 px-8">
+      <section className="w-full bg-foreground text-white py-6 md:py-10 px-4 md:px-8">
         <p
-          className="text-lg md:text-3xl font-medium text-center w-full"
+          className="text-base md:text-lg lg:text-3xl font-medium text-center w-full"
           style={{ fontFamily: "var(--font-lexend)" }}
         >
           <span className="text-primary font-bold">SCRIBEVERSE</span> IS
@@ -371,7 +391,7 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • FANDOM TAGGING + PROMPT REQUESTS
+              • 🏷️ FANDOM TAGGING + PROMPT REQUESTS
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
@@ -388,13 +408,16 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • AUTHOR SOCIAL PROFILES
+              • 🌐 AUTHOR SOCIAL PROFILES
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              Let the world stalk your WIPs and stats.
+              Let the world stalk your WIPs and stats. You don't have to use
+              this function if you'd like to keep your work private, this is
+              absolutely optional! Scribeverse's main focus is not a social
+              media, but an all-in-one tool to support writers.
             </p>
           </div>
 
@@ -404,7 +427,7 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • EARLY ACCESS + SUBSCRIPTIONS
+              • 📸 EARLY ACCESS + SUBSCRIPTIONS
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
@@ -421,14 +444,32 @@ export default function Home() {
               className="text-xl md:text-2xl font-bold text-foreground mb-2"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              • PINTEREST + SPOTIFY INTEGRATION
+              • 🎧 PINTEREST + SPOTIFY INTEGRATION
             </h3>
             <p
               className="text-lg text-accent font-light ml-6"
               style={{ fontFamily: "var(--font-lexend)" }}
             >
-              Listen to your playlists and look at your moodboard for
-              inspiration while writing.
+              Listen to your chapter/book/project playlists and look at your
+              moodboard for inspiration while writing.
+            </p>
+          </div>
+
+          {/* Beta Reader */}
+          <div>
+            <h3
+              className="text-xl md:text-2xl font-bold text-foreground mb-2"
+              style={{ fontFamily: "var(--font-lexend)" }}
+            >
+              • 🫂 BETA READERS + WRITER GROUPS
+            </h3>
+            <p
+              className="text-lg text-accent font-light ml-6"
+              style={{ fontFamily: "var(--font-lexend)" }}
+            >
+              Connect with beta readers for feedback and support during your
+              writing process. Join or create writer groups for collaboration
+              and motivation.
             </p>
           </div>
         </div>
