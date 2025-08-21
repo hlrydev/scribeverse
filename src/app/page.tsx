@@ -22,7 +22,7 @@ export default function Home() {
       <Header />
       {/* Hero Section*/}
 
-      <div className="min-h-screen flex items-center justify-center px-4 overflow-x-hidden">
+      <div className="min-h-screen flex items-center justify-center px-4 overflow-x-hidden pt-4 md:pt-0">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading: FIX DISPLAY FOR MOBILE FOR TEXT TO APPEAR SMALLER */}
           <h1
@@ -105,7 +105,7 @@ export default function Home() {
       </div>
 
       {/* WE GET IT - Mobile Responsive Version */}
-      <section id="features-section" className="w-full mb-0 px-4 md:px-8">
+      <section id="features-section" className="w-full mb-4 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Main heading with underline*/}
           <div className="relative mb-6 md:mb-8">
@@ -161,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* Black banner coming from the left */}
-      <div className="w-full mb-0">
+      <div className="w-full mb-4">
         <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-7xl">
           <p
             className="text-base md:text-lg lg:text-xl font-light"
@@ -178,16 +178,16 @@ export default function Home() {
       </div>
 
       {/* Dashboard feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-4 md:-mt-13">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-13">
         <img
           src="/img/features/dashboard_feature_img.png"
           alt="Main Dashboard view"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the right */}
-      <div className="w-full mb-0 md:flex md:justify-end">
+      <div className="w-full mb-4 md:flex md:justify-end">
         <div className="bg-foreground text-white px-4 md:pl-15 md:pr-20 py-4 md:rounded-l-full max-w-full md:max-w-7xl">
           <p
             className="text-base md:text-lg lg:text-xl font-light"
@@ -244,16 +244,16 @@ export default function Home() {
       </div>
 
       {/* Projects & Books feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-4 md:-mt-13">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-13">
         <img
           src="/img/features/projects_books_dashboard_feature_img.png"
           alt="Books and projects dashboards"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the left 2*/}
-      <div className="w-full mb-0">
+      <div className="w-full mb-4">
         <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-4xl">
           <p
             className="text-base md:text-lg lg:text-xl font-light"
@@ -270,16 +270,16 @@ export default function Home() {
       </div>
 
       {/* Challenges feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-10 md:-mt-30">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-30">
         <img
           src="/img/features/challenges_features.png"
           alt="Challenges"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the right 2*/}
-      <div className="w-full mb-0 md:flex md:justify-end">
+      <div className="w-full mb-4 md:flex md:justify-end">
         <div className="bg-foreground text-white px-4 md:pl-15 md:pr-20 py-4 md:rounded-l-full max-w-full md:max-w-7xl">
           <p
             className="text-base md:text-lg lg:text-xl font-light"
@@ -297,16 +297,16 @@ export default function Home() {
       </div>
 
       {/* RTF feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-8 md:-mt-23 -mb-8 md:-mb-20">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-23 md:-mb-20">
         <img
           src="/img/features/text_editor_feature.png"
           alt="Text Editor"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 
       {/* Black banner coming from the left 3*/}
-      <div className="w-full mb-0">
+      <div className="w-full mb-4">
         <div className="bg-foreground text-white px-4 md:pl-30 md:pr-6 py-4 md:rounded-r-full max-w-full md:max-w-4xl">
           <p
             className="text-base md:text-lg lg:text-xl font-light"
@@ -363,11 +363,11 @@ export default function Home() {
       </div>
 
       {/* Export feature image */}
-      <div className="w-full h-screen flex items-center justify-center -mt-20 md:-mt-50 -mb-10 md:-mb-25">
+      <div className="w-full h-auto md:h-screen flex items-center justify-center mb-4 md:-mt-50 md:-mb-25">
         <img
           src="/img/features/export_button.png"
           alt="Export Options"
-          className="w-full max-w-none h-full object-contain"
+          className="w-full max-w-none h-auto md:h-full object-contain"
         />
       </div>
 

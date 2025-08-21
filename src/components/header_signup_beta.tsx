@@ -58,6 +58,8 @@ export default function Header() {
           support us
         </Link>
         <span className="text-white">|</span>
+
+        {/* Connect to the contact section from the footer */}
         <Link
           href="/#contact"
           className="hover:text-yellow-500 whitespace-nowrap"
