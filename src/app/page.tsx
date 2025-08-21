@@ -22,7 +22,7 @@ export default function Home() {
       <Header />
       {/* Hero Section*/}
 
-      <div className="min-h-screen flex items-center justify-center px-4 overflow-x-hidden pt-4 md:pt-0">
+      <div className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center px-4 overflow-x-hidden">
         <div className="text-center max-w-4xl mx-auto">
           {/* Main Heading: FIX DISPLAY FOR MOBILE FOR TEXT TO APPEAR SMALLER */}
           <h1
