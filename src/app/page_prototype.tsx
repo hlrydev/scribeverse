@@ -2,8 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import FAQSection from "@/components/faq_section";
-import Header from "@components/header_signup_beta";
+import Header from "@components/header";
 import BetaSignupPopover from "@/components/popover";
+
+//RETURN TO page_prototype.tsx BEFORE COMMITING CHANGES
 
 export default function Home() {
   // Function to scroll to the "WE GET IT" section

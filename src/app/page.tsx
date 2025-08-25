@@ -1,5 +1,7 @@
 "use client";
 
+//RETURN TO page.tsx BEFORE COMMITING CHANGES
+
 import { Button } from "@/components/ui/button";
 import FAQSection from "@/components/faq_section";
 import Header from "@components/header_signup_beta";
