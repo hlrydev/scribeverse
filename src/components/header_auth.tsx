@@ -18,7 +18,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Menu, Settings, LogOut, User } from "lucide-react";
 
 export default function AuthenticatedHeader() {
@@ -54,16 +54,414 @@ export default function AuthenticatedHeader() {
               <Menu className="w-6 h-6" />
             </Button>
           </DrawerTrigger>
-          <DrawerContent className="bg-white border-gray-700">
-            <DrawerHeader>
-              <DrawerTitle className="text-white">Menu</DrawerTitle>
-            </DrawerHeader>
-            <ScrollArea className="h-[400px] px-4">
-              {/* Content will be added here */}
-              <div className="py-4">
-                <p className="text-gray-400">Menu content will go here...</p>
+          <DrawerContent
+            className="bg-white w-full max-w-none fixed inset-0"
+            style={{ width: "100vw", maxWidth: "100vw" }}
+          >
+            <div className="flex flex-col overflow-y-auto h-full">
+              {/* Projects Banner */}
+              <div className="bg-[#2a2a2a] text-center py-7 mb-4 w-full relative">
+                <h2
+                  className="text-white text-lg font-semibold tracking-wider"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  PROJECTS
+                </h2>
+                {/* Add Project Button */}
+                <button
+                  className="absolute right-6 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-primary hover:bg-white/20 rounded-full flex items-center justify-center transition-colors group"
+                  onClick={() => {
+                    // Add your project creation logic here
+                    console.log("Create new project");
+                  }}
+                  title="Create New Project"
+                >
+                  <svg
+                    className="w-4 h-4 text-secondary group-hover:text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                </button>
               </div>
-            </ScrollArea>
+
+              <div className="py-5 text-center">
+                <h3
+                  className="text-foreground text-base font-medium mb-3"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  ONGOING PROJECTS
+                </h3>
+              </div>
+
+              {/* make scroll area full width of banner bc the w-full is not working*/}
+              <div className="flex">
+                <ScrollArea type="always" className="w-1 flex-1">
+                  <div className="flex gap-2 pb-4">
+                    {/* Updated container for horizontal scrolling with EXACTLY 5 visible folders */}
+                    <div className="overflow-x-auto w-full ">
+                      <div
+                        className="flex gap-10 px-10"
+                        style={{ width: "max-content" }}
+                      >
+                        {/* Mock folder data - replace with actual data */}
+                        {[
+                          {
+                            id: 1,
+                            title: "Project Alpha",
+                            color: "bg-primary",
+                          },
+                          { id: 2, title: "Project Beta", color: "bg-primary" },
+                          {
+                            id: 3,
+                            title: "Project Gamma",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 4,
+                            title: "Project Delta",
+                            color: "bg-secondary",
+                          },
+                          {
+                            id: 5,
+                            title: "Project Epsilon",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 6,
+                            title: "Project Zeta",
+                            color: "bg-secondary",
+                          },
+                          {
+                            id: 7,
+                            title: "Project Eta",
+                            color: "bg-secondary",
+                          },
+                          {
+                            id: 8,
+                            title: "Project Theta",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 9,
+                            title: "Project Iota",
+                            color: "bg-secondary",
+                          },
+                          {
+                            id: 10,
+                            title: "Project Kappa",
+                            color: "bg-primary",
+                          },
+                        ].map((folder) => (
+                          <div
+                            key={folder.id}
+                            className="flex flex-col items-center flex-shrink-0"
+                            style={{ width: "180px" }} // Fixed width for consistent layout
+                          >
+                            <div
+                              className={`w-full h-32 ${folder.color} rounded-lg rounded-tr-none relative cursor-pointer hover:opacity-80 transition-opacity`}
+                            >
+                              {/* Folder tab */}
+                              <div
+                                className={`absolute -top-2 right-2 w-4 h-3 ${folder.color} rounded-t-md`}
+                              ></div>
+                            </div>
+                            <p
+                              className="text-foreground text-xs mt-2 text-center truncate w-full px-1"
+                              style={{ fontFamily: "var(--font-lexend)" }}
+                              title={folder.title} // Show full title on hover
+                            >
+                              {folder.title}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <ScrollBar orientation="horizontal" className="w-full" />
+                </ScrollArea>
+              </div>
+
+              <div className="py-5 text-center">
+                <h3
+                  className="text-foreground text-base font-medium mb-3"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  COMPLETED PROJECTS
+                </h3>
+              </div>
+
+              {/* make scroll area full width of banner bc the w-full is not working*/}
+              <div className="flex">
+                <ScrollArea type="always" className="w-1 flex-1">
+                  <div className="flex gap-2 pb-4">
+                    {/* Updated container for horizontal scrolling with EXACTLY 5 visible folders */}
+                    <div className="overflow-x-auto w-full ">
+                      <div
+                        className="flex gap-10 px-10"
+                        style={{ width: "max-content" }}
+                      >
+                        {/* Mock folder data - replace with actual data */}
+                        {[
+                          {
+                            id: 1,
+                            title: "Project Alpha",
+                            color: "bg-primary",
+                          },
+                          { id: 2, title: "Project Beta", color: "bg-primary" },
+                          {
+                            id: 3,
+                            title: "Project Gamma",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 4,
+                            title: "Project Delta",
+                            color: "bg-secondary",
+                          },
+                        ].map((folder) => (
+                          <div
+                            key={folder.id}
+                            className="flex flex-col items-center flex-shrink-0"
+                            style={{ width: "180px" }} // Fixed width for consistent layout
+                          >
+                            <div
+                              className={`w-full h-32 ${folder.color} rounded-lg rounded-tr-none relative cursor-pointer hover:opacity-80 transition-opacity`}
+                            >
+                              {/* Folder tab */}
+                              <div
+                                className={`absolute -top-2 right-2 w-4 h-3 ${folder.color} rounded-t-md`}
+                              ></div>
+                            </div>
+                            <p
+                              className="text-foreground text-xs mt-2 text-center truncate w-full px-1"
+                              style={{ fontFamily: "var(--font-lexend)" }}
+                              title={folder.title} // Show full title on hover
+                            >
+                              {folder.title}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <ScrollBar orientation="horizontal" className="w-full" />
+                </ScrollArea>
+              </div>
+
+              <div className="bg-[#2a2a2a] text-center py-7 mb-4 w-full relative">
+                <h2
+                  className="text-white text-lg font-semibold tracking-wider"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  CHALLENGES
+                </h2>
+              </div>
+
+              <div className="py-5 text-center">
+                <h3
+                  className="text-foreground text-base font-medium mb-3"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  JOIN A CHALLENGE!
+                </h3>
+              </div>
+
+              {/* make scroll area full width of banner bc the w-full is not working*/}
+              <div className="flex">
+                <ScrollArea type="always" className="w-1 flex-1">
+                  <div className="flex gap-2 pb-4">
+                    {/* Updated container for horizontal scrolling with EXACTLY 5 visible folders */}
+                    <div className="overflow-x-auto w-full ">
+                      <div
+                        className="flex gap-10 px-10"
+                        style={{ width: "max-content" }}
+                      >
+                        {/* Mock folder data - replace with actual data */}
+                        {[
+                          {
+                            id: 1,
+                            title: "Project Alpha",
+                            color: "bg-primary",
+                          },
+                          { id: 2, title: "Project Beta", color: "bg-primary" },
+                          {
+                            id: 3,
+                            title: "Project Gamma",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 4,
+                            title: "Project Delta",
+                            color: "bg-secondary",
+                          },
+                          {
+                            id: 5,
+                            title: "Project Epsilon",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 6,
+                            title: "Project Zeta",
+                            color: "bg-secondary",
+                          },
+                          {
+                            id: 7,
+                            title: "Project Eta",
+                            color: "bg-secondary",
+                          },
+                        ].map((folder) => (
+                          <div
+                            key={folder.id}
+                            className="flex flex-col items-center flex-shrink-0 group"
+                            style={{ width: "180px" }}
+                          >
+                            {/* Pill-shaped folder container */}
+                            <div
+                              className={`w-full h-20 ${folder.color} rounded-full cursor-pointer transition-all duration-200 group-hover:shadow-lg group-hover:scale-90 shadow-md flex items-center justify-center`}
+                            >
+                              {/* Title inside the pill */}
+                              <p
+                                className="text-white text-sm font-medium text-center px-4"
+                                style={{ fontFamily: "var(--font-lexend)" }}
+                              >
+                                {folder.title}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <ScrollBar orientation="horizontal" className="w-full" />
+                </ScrollArea>
+              </div>
+
+              <div className="py-5 text-center">
+                <h3
+                  className="text-foreground text-base font-medium mb-3"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  MY CHALLENGES
+                </h3>
+              </div>
+
+              {/* make scroll area full width of banner bc the w-full is not working*/}
+              <div className="flex">
+                <ScrollArea type="always" className="w-1 flex-1">
+                  <div className="flex gap-2 pb-4">
+                    {/* Updated container for horizontal scrolling with EXACTLY 5 visible folders */}
+                    <div className="overflow-x-auto w-full ">
+                      <div
+                        className="flex gap-10 px-10"
+                        style={{ width: "max-content" }}
+                      >
+                        {/* Mock folder data - replace with actual data */}
+                        {[
+                          {
+                            id: 1,
+                            title: "Project Alpha",
+                            color: "bg-primary",
+                          },
+                          { id: 2, title: "Project Beta", color: "bg-primary" },
+                        ].map((folder) => (
+                          <div
+                            key={folder.id}
+                            className="flex flex-col items-center flex-shrink-0 group"
+                            style={{ width: "180px" }}
+                          >
+                            {/* Pill-shaped folder container */}
+                            <div
+                              className={`w-full h-20 ${folder.color} rounded-full cursor-pointer transition-all duration-200 group-hover:shadow-lg group-hover:scale-90 shadow-md flex items-center justify-center`}
+                            >
+                              {/* Title inside the pill */}
+                              <p
+                                className="text-white text-sm font-medium text-center px-4"
+                                style={{ fontFamily: "var(--font-lexend)" }}
+                              >
+                                {folder.title}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <ScrollBar orientation="horizontal" className="w-full" />
+                </ScrollArea>
+              </div>
+
+              <div className="py-5 text-center">
+                <h3
+                  className="text-foreground text-base font-medium mb-3"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  COMPLETED CHALLENGES
+                </h3>
+              </div>
+
+              {/* make scroll area full width of banner bc the w-full is not working*/}
+              <div className="flex">
+                <ScrollArea type="always" className="w-1 flex-1">
+                  <div className="flex gap-2 pb-4">
+                    {/* Updated container for horizontal scrolling with EXACTLY 5 visible folders */}
+                    <div className="overflow-x-auto w-full ">
+                      <div
+                        className="flex gap-10 px-10"
+                        style={{ width: "max-content" }}
+                      >
+                        {/* Mock folder data - replace with actual data */}
+                        {[
+                          {
+                            id: 1,
+                            title: "Project Alpha",
+                            color: "bg-primary",
+                          },
+                          { id: 2, title: "Project Beta", color: "bg-primary" },
+                          {
+                            id: 3,
+                            title: "Project Gamma",
+                            color: "bg-primary",
+                          },
+                          {
+                            id: 4,
+                            title: "Project Delta",
+                            color: "bg-secondary",
+                          },
+                        ].map((folder) => (
+                          <div
+                            key={folder.id}
+                            className="flex flex-col items-center flex-shrink-0 group"
+                            style={{ width: "180px" }}
+                          >
+                            {/* Pill-shaped folder container */}
+                            <div
+                              className={`w-full h-20 ${folder.color} rounded-full cursor-pointer transition-all duration-200 group-hover:shadow-lg group-hover:scale-90 shadow-md flex items-center justify-center`}
+                            >
+                              {/* Title inside the pill */}
+                              <p
+                                className="text-white text-sm font-medium text-center px-4"
+                                style={{ fontFamily: "var(--font-lexend)" }}
+                              >
+                                {folder.title}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <ScrollBar orientation="horizontal" className="w-full" />
+                </ScrollArea>
+              </div>
+            </div>
           </DrawerContent>
         </Drawer>
       </div>
@@ -94,6 +492,7 @@ export default function AuthenticatedHeader() {
             <Button
               variant="ghost"
               className="text-yellow-500 font-semibold hover:text-yellow-400 px-2 py-1 text-sm"
+              style={{ fontFamily: "var(--font-lexend)" }}
             >
               {user.username}
             </Button>
@@ -107,18 +506,28 @@ export default function AuthenticatedHeader() {
                 {user.username.charAt(0).toUpperCase()}
               </div>
               <div className="flex flex-col space-y-1 leading-none">
-                <p className="font-medium text-white">{user.username}</p>
-                <p className="text-xs text-gray-400">{user.email}</p>
+                <p
+                  className="font-medium text-white"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  {user.username}
+                </p>
+                <p
+                  className="text-xs text-gray-400"
+                  style={{ fontFamily: "var(--font-lexend)" }}
+                >
+                  {user.email}
+                </p>
               </div>
             </div>
             <DropdownMenuSeparator className="bg-gray-700" />
             <DropdownMenuItem className="hover:bg-gray-800 cursor-pointer text-white">
               <User className="mr-2 h-4 w-4" />
-              <span>Profile</span>
+              <span style={{ fontFamily: "var(--font-lexend)" }}>Profile</span>
             </DropdownMenuItem>
             <DropdownMenuItem className="hover:bg-gray-800 cursor-pointer text-white">
               <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
+              <span style={{ fontFamily: "var(--font-lexend)" }}>Settings</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator className="bg-gray-700" />
             <DropdownMenuItem
@@ -126,7 +535,7 @@ export default function AuthenticatedHeader() {
               onClick={handleLogout}
             >
               <LogOut className="mr-2 h-4 w-4" />
-              <span>Log out</span>
+              <span style={{ fontFamily: "var(--font-lexend)" }}>Log out</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
