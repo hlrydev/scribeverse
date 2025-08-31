@@ -19,7 +19,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Menu, Settings, LogOut, User } from "lucide-react";
+import { Menu, Settings, LogOut, User, Home } from "lucide-react";
 
 export default function AuthenticatedHeader() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -41,8 +41,8 @@ export default function AuthenticatedHeader() {
 
   return (
     <header className="w-full bg-[#1a1a1a] text-white px-4 sm:px-6 py-2 sm:py-4 flex items-center justify-between">
-      {/* Left: Menu Icon */}
-      <div className="flex items-center">
+      {/* Left: Menu Icon and Home Icon */}
+      <div className="flex items-center gap-2">
         <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
           <DrawerTrigger asChild>
             <Button
@@ -471,6 +471,18 @@ export default function AuthenticatedHeader() {
             </div>
           </DrawerContent>
         </Drawer>
+
+        {/* Home Icon */}
+        <Link href="/dashboard">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-white hover:bg-white/10 p-2"
+            title="Go to Dashboard"
+          >
+            <Home className="w-5 h-5" />
+          </Button>
+        </Link>
       </div>
 
       {/* Center: Logo */}
