@@ -15,7 +15,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-import Countdown from "@/components/countdown"; // Import your countdown component
+import Countdown from "@/components/countdown";
 
 export default function Dashboard() {
   const streak: number = 7;

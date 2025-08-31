@@ -32,7 +32,7 @@ export default function AuthenticatedHeader() {
 
   const handleLogout = () => {
     console.log("Logging out...");
-    // Add your logout logic here
+    window.location.href = "/auth";
   };
 
   const handleMenuClick = () => {
@@ -105,7 +105,8 @@ export default function AuthenticatedHeader() {
               <div className="flex">
                 <ScrollArea type="always" className="w-1 flex-1">
                   <div className="flex gap-2 pb-4">
-                    {/* Updated container for horizontal scrolling with EXACTLY 5 visible folders */}
+                    {/* link all folders to /projects/[id] */}
+
                     <div className="overflow-x-auto w-full ">
                       <div
                         className="flex gap-10 px-10"
@@ -160,27 +161,33 @@ export default function AuthenticatedHeader() {
                             color: "bg-primary",
                           },
                         ].map((folder) => (
-                          <div
+                          <Link
                             key={folder.id}
-                            className="flex flex-col items-center flex-shrink-0"
-                            style={{ width: "180px" }} // Fixed width for consistent layout
+                            href={`/projects/${folder.id}`}
+                            className="flex-shrink-0"
                           >
                             <div
-                              className={`w-full h-32 ${folder.color} rounded-lg rounded-tr-none relative cursor-pointer hover:opacity-80 transition-opacity`}
+                              key={folder.id}
+                              className="flex flex-col items-center flex-shrink-0"
+                              style={{ width: "180px" }} // Fixed width for consistent layout
                             >
-                              {/* Folder tab */}
                               <div
-                                className={`absolute -top-2 right-2 w-4 h-3 ${folder.color} rounded-t-md`}
-                              ></div>
+                                className={`w-full h-32 ${folder.color} rounded-lg rounded-tr-none relative cursor-pointer hover:opacity-80 transition-opacity`}
+                              >
+                                {/* Folder tab */}
+                                <div
+                                  className={`absolute -top-2 right-2 w-4 h-3 ${folder.color} rounded-t-md`}
+                                ></div>
+                              </div>
+                              <p
+                                className="text-foreground text-xs mt-2 text-center truncate w-full px-1"
+                                style={{ fontFamily: "var(--font-lexend)" }}
+                                title={folder.title} // Show full title on hover
+                              >
+                                {folder.title}
+                              </p>
                             </div>
-                            <p
-                              className="text-foreground text-xs mt-2 text-center truncate w-full px-1"
-                              style={{ fontFamily: "var(--font-lexend)" }}
-                              title={folder.title} // Show full title on hover
-                            >
-                              {folder.title}
-                            </p>
-                          </div>
+                          </Link>
                         ))}
                       </div>
                     </div>
