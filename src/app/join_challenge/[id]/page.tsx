@@ -1,10 +1,12 @@
 "use client";
 
+import { useParams } from "next/navigation";
 import Header from "@components/header_auth";
 import { BookOpen } from "lucide-react";
 import Countdown from "@components/countdown";
 
-export default function ChallengePage({ params }: { params: { id: string } }) {
+export default function ChallengePage() {
+  const params = useParams() as { id: string };
   return (
     <div className="min-h-screen bg-background">
       <Header />

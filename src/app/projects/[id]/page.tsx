@@ -7,8 +7,11 @@ import Header from "@components/header_auth";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import ColorCodedNotes from "@components/notes";
 import { Library } from "lucide-react";
+import { useState } from "react";
+import { useParams } from "next/navigation";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage() {
+  const params = useParams() as { id: string };
   const router = useRouter();
 
   const handleDelete = async () => {

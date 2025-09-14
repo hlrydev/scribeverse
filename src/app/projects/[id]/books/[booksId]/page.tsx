@@ -33,11 +33,8 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import ExportButton from "@/components/export";
 import ColorCodedNotes from "@components/notes";
 
-export default function BookPage({
-  params,
-}: {
-  params: { id: string; booksId: string };
-}) {
+export default function BookPage() {
+  const params = useParams() as { id: string; booksId: string };
   const { id, booksId } = params;
   const router = useRouter();
 
