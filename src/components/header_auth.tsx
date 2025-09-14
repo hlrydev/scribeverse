@@ -291,7 +291,7 @@ export default function AuthenticatedHeader() {
                         className="flex gap-10 px-10"
                         style={{ width: "max-content" }}
                       >
-                        {/* Mock folder data - replace with actual data */}
+                        {/* Mock challenge data - replace with actual data */}
                         {[
                           {
                             id: 1,
@@ -324,25 +324,30 @@ export default function AuthenticatedHeader() {
                             title: "Project Eta",
                             color: "bg-secondary",
                           },
-                        ].map((folder) => (
-                          <div
-                            key={folder.id}
-                            className="flex flex-col items-center flex-shrink-0 group"
-                            style={{ width: "180px" }}
+                        ].map((challenge) => (
+                          <Link
+                            key={challenge.id}
+                            href={`/join_challenge/${challenge.id}`}
+                            className="flex-shrink-0"
                           >
-                            {/* Pill-shaped folder container */}
                             <div
-                              className={`w-full h-20 ${folder.color} rounded-full cursor-pointer transition-all duration-200 group-hover:shadow-lg group-hover:scale-90 shadow-md flex items-center justify-center`}
+                              className="flex flex-col items-center flex-shrink-0 group"
+                              style={{ width: "180px" }}
                             >
-                              {/* Title inside the pill */}
-                              <p
-                                className="text-white text-sm font-medium text-center px-4"
-                                style={{ fontFamily: "var(--font-lexend)" }}
+                              {/* Pill-shaped folder container */}
+                              <div
+                                className={`w-full h-20 ${challenge.color} rounded-full cursor-pointer transition-all duration-200 group-hover:shadow-lg group-hover:scale-90 shadow-md flex items-center justify-center`}
                               >
-                                {folder.title}
-                              </p>
+                                {/* Title inside the pill */}
+                                <p
+                                  className="text-white text-sm font-medium text-center px-4"
+                                  style={{ fontFamily: "var(--font-lexend)" }}
+                                >
+                                  {challenge.title}
+                                </p>
+                              </div>
                             </div>
-                          </div>
+                          </Link>
                         ))}
                       </div>
                     </div>

@@ -45,14 +45,12 @@ export default function Home() {
 
           {/* Buttons Container - Made Responsive */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8">
-            <BetaSignupPopover>
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-primary hover:bg-primary/10 text-accent font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg"
-              >
-                get started
-              </Button>
-            </BetaSignupPopover>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/10 text-accent font-semibold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg cursor-pointer"
+            >
+              <a href="/auth">get started</a>
+            </Button>
 
             <Button
               size="lg"
@@ -320,7 +318,7 @@ export default function Home() {
               🖱️ Export your work with one click.
             </span>
             <br />
-            Export chapters and books in PDF, DOCX, EPUB, and RTF formats.
+            Export chapters and books in PDF, DOCX, EPUB, and AO3 formats.
           </p>
         </div>
 

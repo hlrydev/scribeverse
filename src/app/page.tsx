@@ -320,7 +320,7 @@ export default function Home() {
               🖱️ Export your work with one click.
             </span>
             <br />
-            Export chapters and books in PDF, DOCX, EPUB, and RTF formats.
+            Export chapters and books in PDF, DOCX, EPUB, and AO3 formats.
           </p>
         </div>
 
