@@ -1,4 +1,4 @@
-# ✒️ ScribeVerse
+# 🦉 ScribeVerse
 
 **A writing workspace built for writers, authors, and fanfiction creators.**
 
